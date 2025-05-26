@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temples of India by State</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
+  <link rel="stylesheet" href="about.css">
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <h2>States</h2>
+      <ul>
+        <li><a href="#" data-state="andhra-pradesh">Andhra Pradesh</a></li>
+        <li><a href="#" data-state="arunachal-pradesh">Arunachal Pradesh</a></li>
+        <li><a href="#" data-state="assam">Assam</a></li>
+        <li><a href="#" data-state="bihar">Bihar</a></li>
+        <li><a href="#" data-state="chandigarh">Chandigarh</a></li>
+        <li><a href="#" data-state="chhattisgarh">Chhattisgarh</a></li>
+        <li><a href="#" data-state="delhi">Delhi</a></li>
+        <li><a href="#" data-state="goa">Goa</a></li>
+        <li><a href="#" data-state="gujarat">Gujarat</a></li>
+        <li><a href="#" data-state="haryana">Haryana</a></li>
+        <li><a href="#" data-state="himachal-pradesh">Himachal Pradesh</a></li>
+        <li><a href="#" data-state="jammu-and-kashmir">Jammu & Kashmir</a></li>
+        <li><a href="#" data-state="jharkhand">Jharkhand</a></li>
+        <li><a href="#" data-state="karnataka">Karnataka</a></li>
+        <li><a href="#" data-state="kerala">Kerala</a></li>
+        <li><a href="#" data-state="madhya-pradesh">Madhya Pradesh</a></li>
+        <li><a href="#" data-state="maharashtra">Maharashtra</a></li>
+        <li><a href="#" data-state="manipur">Manipur</a></li>
+        <li><a href="#" data-state="meghalaya">Meghalaya</a></li>
+        <li><a href="#" data-state="odisha">Odisha</a></li>
+        <li><a href="#" data-state="punjab">Punjab</a></li>
+        <li><a href="#" data-state="rajasthan">Rajasthan</a></li>
+        <li><a href="#" data-state="sikkim">Sikkim</a></li>
+        <li><a href="#" data-state="tamil-nadu">Tamil Nadu</a></li>
+        <li><a href="#" data-state="telangana">Telangana</a></li>
+        <li><a href="#" data-state="tripura">Tripura</a></li>
+        <li><a href="#" data-state="uttar-pradesh">Uttar Pradesh</a></li>
+        <li><a href="#" data-state="uttarakhand">Uttarakhand</a></li>
+        <li><a href="#" data-state="west-bengal">West Bengal</a></li>
+      </ul>
+    </div>
+    
+    <div class="main-content">
+      <h1>Temples in India</h1>
+      <p>Select a state to view temples</p>
+      
+      <div class="temples-list" id="temple-list">
+        <!-- Temples list will load here dynamically -->
+      </div>
+
+      <a href="index.html" class="btn-back">← Back to Home</a>
+    </div>
+  </div>
+
+  <script>
+    const stateTemples = {
+      
+      'arunachal-pradesh': [
+        {
+          name: 'Malinithan Temple',
+          description: 'Malinithan Temple is an ancient Hindu temple dedicated to Goddess Durga, located in Arunachal Pradesh. The temple holds great historical and spiritual significance.'
+        },
+        {
+          name: 'Tawang Monastery',
+          description: 'The Tawang Monastery in Arunachal Pradesh is one of the largest Buddhist monasteries in India. Located at an altitude of 10,000 feet, it is dedicated to the Gelug school of Tibetan Buddhism.'
+        }
+      ],
+      'assam': [
+        {
+          name: 'Kamakhya Temple',
+          description: 'Kamakhya Temple, situated in Assam, is one of the most sacred shrines dedicated to Goddess Kamakhya. It is one of the 51 Shakti Peethas, known for its powerful spiritual presence and tantric practices.'
+        },
+        {
+          name: 'Umananda Temple',
+          description: 'Umananda Temple, located on Peacock Island in the Brahmaputra River, is dedicated to Lord Shiva. The temple offers stunning views of the river and the city of Guwahati.'
+        }
+      ],
+      'bihar': [
+        {
+          name: 'Bodh Gaya',
+          description: 'Bodh Gaya in Bihar is one of the holiest sites in Buddhism as it is the place where Lord Buddha attained enlightenment under the Bodhi tree. The Mahabodhi Temple is a UNESCO World Heritage Site.'
+        },
+        {
+          name: 'Vishnupad Temple',
+          description: 'Located in Gaya, Bihar, the Vishnupad Temple is dedicated to Lord Vishnu. It is known for its historical significance and is a major pilgrimage site for Hindus.'
+        }
+      ],
+      'chandigarh': [
+        {
+          name: 'Mata Mansa Devi Temple',
+          description: 'Mata Mansa Devi Temple is located in Panchkula, near Chandigarh, and is dedicated to Goddess Mansa. The temple is revered for its spiritual importance and beautiful surroundings.'
+        }
+      ],
+      'chhattisgarh': [
+        {
+          name: 'Bhoramdeo Temple',
+          description: 'Bhoramdeo Temple, located in Chhattisgarh, is a beautiful ancient temple dedicated to Lord Shiva, often referred to as the "Khajuraho of Chhattisgarh" due to its exquisite architecture.'
+        },
+        {
+          name: 'Kailash and Kotumsar Caves',
+          description: 'The Kailash and Kotumsar caves in Chhattisgarh are ancient natural caves believed to have been places of worship for prehistoric people.'
+        }
+      ],
+      'delhi': [
+        {
+          name: 'Akshardham Temple',
+          description: 'Akshardham Temple in Delhi is one of the largest temples dedicated to Bhagwan Swaminarayan. It is famous for its cultural exhibitions, stunning architecture, and the grand Yogi Hriday Kamal.'
+        },
+        {
+          name: 'Lotus Temple',
+          description: 'The Lotus Temple, built in the shape of a lotus flower, is the Bahá\'í House of Worship in Delhi. It is open to people of all faiths and is a symbol of unity and peace.'
+        }
+      ],
+      'goa': [
+        {
+          name: 'Shri Mangueshi Temple',
+          description: 'The Mangueshi Temple, located in Goa, is dedicated to Lord Shiva. The temple is known for its stunning architecture and beautiful setting in the serene village of Mangeshi.'
+        },
+        {
+          name: 'Shri Shantadurga Temple',
+          description: 'Shri Shantadurga Temple, situated in Kavlem, Goa, is dedicated to Goddess Shantadurga. The temple is famous for its beautiful architecture and serene surroundings.'
+        }
+      ],
+      'gujarat': [
+        {
+          name: 'Somnath Temple',
+          description: 'The Somnath Temple in Saurashtra, Gujarat, is one of the oldest and most revered temples in India. It is considered the first of the twelve Jyotirlingas and has been a center of pilgrimage for millennia.'
+        },
+        {
+          name: 'Dwarkadhish Temple',
+          description: 'The Dwarkadhish Temple, located in the city of Dwarka, Gujarat, is dedicated to Lord Krishna. It is one of the four Char Dham pilgrimage sites and a significant religious destination.'
+        }
+      ],
+      'haryana': [
+        {
+          name: 'Baba Farid\'s Tomb',
+          description: 'Baba Farid\'s Tomb, located in Faridabad, Haryana, is a spiritual site dedicated to the Sufi saint Baba Farid, whose teachings and philosophy have a lasting impact.'
+        },
+        {
+          name: 'Mata Sheetala Devi Temple',
+          description: 'Mata Sheetala Devi Temple, situated in Gurgaon, Haryana, is dedicated to Goddess Sheetala, who is believed to cure ailments and protect the community.'
+        }
+      ],
+      'himachal-pradesh': [
+        {
+          name: 'Hidimba Devi Temple',
+          description: 'Hidimba Devi Temple, located in Manali, Himachal Pradesh, is dedicated to Hidimba, the wife of Bhima in the Mahabharata. The temple is set amidst deodar forests.'
+        },
+        {
+          name: 'Jwalamukhi Temple',
+          description: 'Jwalamukhi Temple in Himachal Pradesh is dedicated to Goddess Jwalamukhi, where the natural flames, representing the Goddess, are worshipped by devotees.'
+        }
+      ],
+      'jammu-and-kashmir': [
+        {
+          name: 'Vaishno Devi Temple',
+          description: 'The Vaishno Devi Temple in Jammu is one of the most visited pilgrimage sites in India. Dedicated to Goddess Vaishno Devi, it attracts millions of devotees annually.'
+        },
+        {
+          name: 'Amarnath Cave Temple',
+          description: 'The Amarnath Cave Temple, located in Jammu and Kashmir, is dedicated to Lord Shiva. It is one of the most famous and revered pilgrimage sites in Hinduism, particularly because of the natural ice Shiva Lingam.'
+        }
+      ],
+      'jharkhand': [
+        {
+          name: 'Baba Baidyanath Temple',
+          description: 'Baba Baidyanath Temple, located in Deoghar, Jharkhand, is one of the twelve Jyotirlingas of Lord Shiva and holds immense religious significance for Hindu pilgrims.'
+        },
+        {
+          name: 'Rajrappa Temple',
+          description: 'Rajrappa Temple in Jharkhand is dedicated to Goddess Chhinnamastika, one of the 64 Mahavidyas in Hinduism. It is located near the confluence of the river Bhairavi and Damodar.'
+        }
+      ],
+      'karnataka': [
+        {
+          name: 'Sri Chamarajendra Park',
+          description: 'Sri Chamarajendra Park, also known as Cubbon Park, located in Bengaluru, Karnataka, is a serene space for prayer and reflection, featuring several small shrines.'
+        },
+        {
+          name: 'Udupi Sri Krishna Temple',
+          description: 'The Udupi Sri Krishna Temple in Karnataka is a famous temple dedicated to Lord Krishna. It is known for its unique worship rituals and beautiful architecture.'
+        }
+      ],
+      'kerala': [
+        {
+          name: 'Sabarimala Temple',
+          description: 'Sabarimala Temple, located in Kerala, is one of the largest pilgrimage centers in India, dedicated to Lord Ayyappa. Pilgrims undertake a challenging trek to reach the temple.'
+        },
+        {
+          name: 'Padmanabhaswamy Temple',
+          description: 'The Padmanabhaswamy Temple, located in Thiruvananthapuram, Kerala, is dedicated to Lord Vishnu. It is one of the richest temples in India and is famous for its stunning architecture.'
+        }
+      ],
+      // Continue adding temples for other states as needed...
+    };
+
+    // Function to handle state selection and load temples
+    document.querySelectorAll('.sidebar a').forEach(link => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        const state = event.target.getAttribute('data-state');
+        loadTemples(state);
+      });
+    });
+
+    // Function to load temples for selected state
+    function loadTemples(state) {
+      const templesList = document.getElementById('temple-list');
+      templesList.innerHTML = '';
+
+      if (stateTemples[state]) {
+        stateTemples[state].forEach(temple => {
+          const templeItem = document.createElement('div');
+          templeItem.classList.add('item');
+          
+          const templeButton = document.createElement('button');
+          templeButton.classList.add('accordion-btn');
+          templeButton.textContent = temple.name + ' ⌄';
+          
+          const templeContent = document.createElement('div');
+          templeContent.classList.add('content');
+          templeContent.textContent = temple.description;
+          
+          templeItem.appendChild(templeButton);
+          templeItem.appendChild(templeContent);
+          templesList.appendChild(templeItem);
+
+          templeButton.addEventListener('click', () => {
+            templeButton.classList.toggle('active');
+            if (templeContent.style.maxHeight) {
+              templeContent.style.maxHeight = null;
+            } else {
+              templeContent.style.maxHeight = templeContent.scrollHeight + "px";
+            }
+          });
+        });
+      } else {
+        templesList.innerHTML = '<p>No temples found for this state.</p>';
+      }
+    }
+  </script>
+</body>
+</html>
+
+
+
